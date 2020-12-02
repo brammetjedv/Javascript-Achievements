@@ -14,6 +14,6 @@ In het het bestand  [index.html](http://32018.hosts1.ma-cloud.nl/javascript1/ind
 **Dit overzicht zet je op je eigen Ma Cloud website en houd je up-to-date!**
 
 Plaats in deze readme een link naar het index bestand op je ma-cloud site.  
-**HIER de link plaatsen**
+**[hier is de link](http://32018.hosts1.ma-cloud.nl/javascript1/index.html)**
 
 
