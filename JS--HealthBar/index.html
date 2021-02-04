@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            .HPbar{
+                text-align: center;
+                padding-top: 23%;
+            }
+            
+            #knoppie{
+                text-align: center;
+                padding-left: 50px;
+                margin-left: 47%;
+                padding-right: 50px;
+            }
+
+            #demo{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="HPbar">
+            <meter id="healthbar" min="0" max="100" value="100"></meter>
+            <h3 id="hitpoints">100 HP left!</h3>
+        </div>     
+        <button id="knoppie">Hit!</button> 
+        <h1 id="demo">You're Alive!</h1>
+        
+        <script>
+            document.getElementById("knoppie").addEventListener("click", hitme);
+                
+            function hitme() {
+                var x = document.getElementById("healthbar").value;
+                var y = x - 10;
+                document.getElementById("hitpoints").innerHTML = y + ' HP left!';
+                document.getElementById("healthbar").value = y;
+                if ( y < 1 ){
+                    document.getElementById("demo").innerHTML = "You Died!";
+                }
+
+                if ( y < 1){
+                    y = 0;
+                    document.getElementById("hitpoints").innerHTML = '0 HP left';
+                }
+            }
+                   
+           
+        </script>
+    </body>
+</html>

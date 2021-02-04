@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Master</title>
+    <style>
+        #allNum li{
+            display: inline-table;
+            padding: 10px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        #allNum{
+            padding-left: 0;
+            text-align: center;
+            text-decoration: none;
+            padding-top: 400px;
+            padding-bottom: 20px;
+        }
+        #button{
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 6px solid;
+            width: 500px;
+            margin-left: 678px;
+            font-family: roboto;
+            vertical-align: middle;
+        }
+        #button:hover{
+            background-color: wheat;
+            cursor: pointer;
+        }
+        .uitkomst{
+            text-align: center;
+            padding: 0;
+            padding-top: 20px;
+        }
+        .uitkomst #uitkomst{
+            padding: 0;
+        } 
+        .uitkomst #uitkomst #uitk{
+            text-decoration: none;
+            display: inline-table;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="allNum">
+            <li id="num1">-</li>
+            <li id="num2">-</li>
+            <li id="num3">-</li>
+            <li id="num4">-</li>
+        </ul>
+    </div>
+    <div>
+        <p id="button">Roll the dice</p>
+    </div>
+    <div class="uitkomst">
+        <ul id="uitkomst">
+            <li id="uitk">-</li>
+        </ul>
+    </div>
+</body>
+<script>
+    function rollTheDice(){
+        var num1 = document.getElementById('num1');
+        var num2 = document.getElementById('num2');
+        var num3 = document.getElementById('num3');
+        var num4 = document.getElementById('num4');
+        var highestNum = document.getElementById('uitk');
+    
+        var numm1 = Math.floor(Math.random() *6) +1;
+        var numm2 = Math.floor(Math.random() *6) +1;
+        var numm3 = Math.floor(Math.random() *6) +1;
+        var numm4 = Math.floor(Math.random() *6) +1;
+    
+        var allNum = [numm1, numm2, numm3, numm4]; 
+
+        var lowestNum = Math.min.apply(Math, allNum);
+        var highestNumm = numm1 + numm2 + numm3 + numm4 - lowestNum;
+       
+
+        num1.innerHTML = numm1;
+        num2.innerHTML = numm2;
+        num3.innerHTML = numm3;
+        num4.innerHTML = numm4;
+        highestNum.innerHTML = highestNumm;
+        
+    }
+
+    document.getElementById('button').addEventListener('click', rollTheDice);
+</script>
+</html>
